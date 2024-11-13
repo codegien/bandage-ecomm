@@ -15,7 +15,7 @@ export default {
 			backgroundColor: ["active", "disabled", "checked"],
 			borderColor: ["active", "disabled", "checked", "focused"],
 			backgroundImage: {
-				firstshow: "url(./src/assets/images/firstshow/asideimg.png)",
+				firstshow: "url(/src/assets/images/firstshow/asideimg.png)",
 			},
 		},
 	},
