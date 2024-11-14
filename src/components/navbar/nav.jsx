@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import BandageLogo from "../icons/bandagelogo";
 import SearchIcon from "../icons/searchicon";
 import CartIcon from "../icons/carticon";
 import FavIcon from "../icons/favouriteicon";
+import { CartContext } from "../../context/CartContext";
 
 function Navbar() {
+	const { cart } = useContext(CartContext);
 	return (
 		<header className='flex w-full bg-lightgray px-20 py-8'>
 			<div className='w-1/5'>
@@ -24,6 +26,7 @@ function Navbar() {
 					<span>Regist/Login</span>
 					<SearchIcon />
 					<CartIcon />
+					<span>{cart.length}</span>
 					<FavIcon />
 				</div>
 			</div>

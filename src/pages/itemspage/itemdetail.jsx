@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import ChevronLeftIcon from "../../components/icons/chevronleft";
 import ProductCard from "../../components/cards/productcard";
 import { products } from "../../data/products";
+import { notify } from "../../hooks/toastconfig";
+import { CartContext } from "../../context/CartContext";
 
 function ItemDetail() {
 	const location = useLocation();
 	const { item } = location.state;
+
+	const { addToCart } = useContext(CartContext);
 
 	console.log("%%%%%%%", item);
 	return (
@@ -32,8 +36,26 @@ function ItemDetail() {
 				</div>
 				<hr className='opacity-[0.25]' />
 				{item && (
-					<div className='flex flex-wrap p-5 gap-4 '>
-						<ProductCard item={item} />
+					<div className='  w-full items-center text-center'>
+						<div className='overflow-hidden h-32 py-[2vmin]'>
+							<img
+								src={item.image}
+								className='w-[80%] mx-auto'
+							/>
+						</div>
+						<div className='w-[80%] mx-auto'>
+							<h1 className='font-bold text-2xl py-[5vmin]'>{item.title}</h1>
+							<p>{item.description}</p>
+							<h1 className='font-bold text-3xl py-[5vmin]'>${item.price}</h1>
+
+							<button
+								className='bg-emerald w-80 p-2 rounded text-lightgray'
+								onClick={() => {
+									addToCart(item);
+								}}>
+								Add to cart
+							</button>
+						</div>
 					</div>
 				)}
 			</div>
