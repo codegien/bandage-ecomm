@@ -33,7 +33,7 @@ function FisrtShow() {
 				</div>
 				<hr className='opacity-[0.25]' />
 				{products && (
-					<div className='flex flex-wrap p-5 gap-4 '>
+					<div className='flex flex-wrap p-5 gap-4 overflow-hidden overflow-y-scroll'>
 						{products.map((item) => (
 							<ProductCard
 								key={item.id}
