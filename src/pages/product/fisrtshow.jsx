@@ -3,6 +3,7 @@ import ChevronLeftIcon from "../../components/icons/chevronleft";
 import ChevronRightIcon from "../../components/icons/chevronright";
 import ProductCard from "../../components/cards/productcard";
 import { products } from "../../data/products";
+import "./firstshowstyles.css";
 
 function FisrtShow() {
 	return (
@@ -33,7 +34,7 @@ function FisrtShow() {
 				</div>
 				<hr className='opacity-[0.25]' />
 				{products && (
-					<div className='flex flex-wrap p-5 gap-4 overflow-hidden overflow-y-scroll'>
+					<div className='flex flex-wrap p-5 gap-4 overflow-y-scroll overflow-x-hidden max-h-[500px] no-scrollbar'>
 						{products.map((item) => (
 							<ProductCard
 								key={item.id}
