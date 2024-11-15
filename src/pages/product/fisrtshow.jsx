@@ -7,7 +7,7 @@ import { products } from "../../data/products";
 function FisrtShow() {
 	return (
 		<section className='w-[80%]  mx-auto flex h-[100vh] overflow-hidden'>
-			<div className='w-2/6 order-1 bg-firstshow bg-cover bg-center h-full'>
+			<div className='w-2/6 hidden sm-block order-1 bg-firstshow bg-cover bg-center h-full'>
 				<div className='p-5'>
 					<h2 className=' text-lg font-bold'>Featured Product</h2>
 					<p>5 items</p>
